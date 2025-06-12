@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import Header from "./header";
 import Footer from "./footer";
 
-export default function PageLayout({ children }: { children: React.ReactNode }) {
+export function PageLayout({ children }: { children: React.ReactNode }) {
     return (
         <Box sx={{
             display: 'grid',

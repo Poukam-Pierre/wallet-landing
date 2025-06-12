@@ -22,7 +22,7 @@ export default function Hero() {
   const { formatMessage, formatNumber } = useIntl();
   const theme = useTheme();
 
-  const [amount, setAmount] = useState<number>(1);
+  const [amount, setAmount] = useState<number | string>(1);
   const [currencyAnchorEl, setCurrencyAnchorEl] = useState<null | HTMLElement>(
     null
   );
@@ -61,6 +61,16 @@ export default function Hero() {
     setActiveCurrency(currencies?.[0]);
   }, [currencies]);
 
+  /* Handle amount by checking if number value has been typed 
+     if so not, clear the value textfield
+  */
+  const handleChange = (e) => {
+    const { value } = e.target;
+    if (value === 0 || !isNaN(value)) {
+      setAmount("");
+    }
+    setAmount(value);
+  }
   return (
     <>
       <CurrencyMenu
@@ -88,32 +98,57 @@ export default function Hero() {
             alignSelf: 'start',
           }}
         >
-          <Typography
-            variant="p1m"
-            sx={{
-              fontWeight: 500,
-              fontSize: { tablet: '16px', mobile: '14px' },
-              lineHeight: '150%',
-              color: theme.palette.secondary.main,
-            }}
-          >
-            {formatMessage({ id: 'adviceheroMessage' })}
-          </Typography>
-          <Typography
-            variant="h1"
-            sx={{
-              fontFamily: 'Space Grotesk',
-              fontWeight: 'bold',
-              fontSize: {
-                tablet: '48px',
-                mobile: '36px',
-              },
-              lineHeight: '120%',
-              color: '#0E103A',
-            }}
-          >
-            {formatMessage({ id: 'heroMessage' })}
-          </Typography>
+          <Box sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            columnGap: 1
+          }}>
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: 'Space Grotesk',
+                fontWeight: 'bold',
+                fontSize: {
+                  tablet: '48px',
+                  mobile: '36px',
+                },
+                lineHeight: '120%',
+                color: '#0E103A',
+              }}
+            >
+              {formatMessage({ id: 'heroMessage' })}
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: 'Space Grotesk',
+                fontWeight: 'bold',
+                fontSize: {
+                  tablet: '48px',
+                  mobile: '36px',
+                },
+                lineHeight: '120%',
+                color: theme.palette.secondary.main,
+              }}
+            >
+              {formatMessage({ id: 'unbeatable' })}
+            </Typography>
+            <Typography
+              variant="h1"
+              sx={{
+                fontFamily: 'Space Grotesk',
+                fontWeight: 'bold',
+                fontSize: {
+                  tablet: '48px',
+                  mobile: '36px',
+                },
+                lineHeight: '120%',
+                color: '#0E103A',
+              }}
+            >
+              {formatMessage({ id: 'rates' })}
+            </Typography>
+          </Box>
           <Typography
             variant="h2"
             sx={{
@@ -128,20 +163,37 @@ export default function Hero() {
           >
             {formatMessage({ id: 'descriptionheroMessage' })}
           </Typography>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{
-              width: '12rem',
-              fontSize: '14px',
-              fontFamily: 'Poppins',
-            }}
-            onClick={() =>
-              window.open(process.env.NEXT_PUBLIC_APP_URL, '_blank')
-            }
-          >
-            {formatMessage({ id: 'heroActionBtn' })}
-          </Button>
+          <Box sx={{
+            display: 'grid',
+            gridAutoFlow: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+            columnGap: 2
+          }}>
+            <Typography
+              variant='h4'
+              sx={{
+                fontFamily: 'Space Grotesk',
+                color: 'rgba(28, 29, 39, 0.80)',
+              }}
+            >
+              {formatMessage({ id: 'doYouHaveAnAccount' })}
+            </Typography>
+            <Button
+              variant="contained"
+              size="medium"
+              sx={{
+                width: '12rem',
+                fontSize: '14px',
+                fontFamily: 'Poppins',
+              }}
+              onClick={() =>
+                window.open(`${process.env.NEXT_PUBLIC_APP_URL}/register`, '_blank')
+              }
+            >
+              {formatMessage({ id: 'register' })}
+            </Button>
+          </Box>
         </Box>
 
         <Box
@@ -173,12 +225,16 @@ export default function Hero() {
               sx={{
                 textAlign: 'center',
                 fontFamily: 'Space Grotesk',
-                fontSize: { tablet: '24px', mobile: '20px' },
-                fontWeight: 500,
+                fontWeight: 600,
+                color: theme.palette.primary.main,
                 lineHeight: '130%',
               }}
             >
-              {formatMessage({ id: 'OurExchangeRate' })}
+              {formatMessage({ id: 'todayRate' })}: {activeCurrency ?
+                `1 ${activeCurrency.currency} = XAF ${activeCurrency.xaf_rate.toFixed(2)}`
+                :
+                'loading...'
+              }
             </Typography>
             <Divider />
             <Box
@@ -224,9 +280,7 @@ export default function Hero() {
                   InputProps={{
                     disableUnderline: true,
                   }}
-                  onChange={(e) => {
-                    setAmount(Number(e.target.value));
-                  }}
+                  onChange={handleChange}
                   value={amount}
                   disabled={areCurrenciesLoading}
                 />
@@ -326,20 +380,10 @@ export default function Hero() {
                   >
                     {amount && activeCurrency
                       ? formatNumber(
-                          Number((amount * activeCurrency.xaf_rate).toFixed(2))
-                        )
+                        Number((Number(amount) * activeCurrency.xaf_rate).toFixed(2))
+                      )
+
                       : '...'}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      lineHeight: '160%',
-                      color: '#12192C',
-                      fontSize: { mobile: '18px', tablet: '24px' },
-                      fontWeight: '600',
-                      fontFamily: 'Space Grotesk',
-                    }}
-                  >
-                    XAF
                   </Typography>
                 </Box>
                 <Box
@@ -365,7 +409,7 @@ export default function Hero() {
                       lineHeight: '130%',
                     }}
                   >
-                    CMR
+                    XAF
                   </Typography>
                 </Box>
               </Box>

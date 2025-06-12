@@ -57,9 +57,9 @@ export default function Cta() {
             width: '18rem',
             color: theme.palette.primary.main,
           }}
-          onClick={() => window.open(process.env.NEXT_PUBLIC_APP_URL, '_blank')}
+          onClick={() => window.open(`${process.env.NEXT_PUBLIC_APP_URL}/register`, '_blank')}
         >
-          {formatMessage({ id: 'sendMoney' })}
+          {formatMessage({ id: 'register' })}
         </Button>
       </Box>
     </Box>

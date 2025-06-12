@@ -20,6 +20,7 @@ export default function HowItWorks() {
             <SectionTitle color='#0E103A'>
                 {formatMessage({ id: 'howItWorksTitle' })}
             </SectionTitle>
+            {/* TODO: Adjust screenshot reflecting each activity */}
             <Box sx={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(2, 1fr)',
@@ -112,53 +113,6 @@ export default function HowItWorks() {
                         {formatMessage({ id: 'howItWorksStep3Description' })}
                     </Typography>
                 </Box>
-            </Box>
-            <Box sx={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                columnGap: 25,
-                alignItems: 'center'
-            }}>
-                <TextCard
-                    title={formatMessage({ id: 'howItWorksStep4' })}
-                    description={formatMessage({ id: 'howItWorksStep4Description' })}
-                    step={4}
-                    positionY={77}
-                />
-                <Image
-                    src='/assets/preTransactionOverview.png'
-                    alt='second registration step'
-                    width={350}
-                    height={600}
-                    style={{
-                        objectFit: 'contain',
-                        objectPosition: 'top'
-                    }}
-                />
-            </Box>
-            <Box sx={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                columnGap: 25,
-                alignItems: 'center'
-            }}>
-                <Image
-                    src='/assets/accountBalance.png'
-                    alt='first registration step'
-                    width={350}
-                    height={280}
-                    style={{
-                        objectFit: 'contain',
-                        objectPosition: 'top',
-                        justifySelf: 'end'
-                    }}
-                />
-                <TextCard
-                    title={formatMessage({ id: 'howItWorksStep5' })}
-                    description={formatMessage({ id: 'howItWorksStep5Description' })}
-                    step={5}
-                    positionY={40}
-                />
             </Box>
         </Box>
     )
