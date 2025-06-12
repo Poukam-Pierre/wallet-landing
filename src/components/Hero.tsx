@@ -71,6 +71,7 @@ export default function Hero() {
     }
     setAmount(value);
   }
+  const areCurrenciesLoading = false;
   return (
     <>
       <CurrencyMenu
