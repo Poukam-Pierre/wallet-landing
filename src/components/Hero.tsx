@@ -28,29 +28,29 @@ export default function Hero() {
   );
   const [activeCurrency, setActiveCurrency] = useState<CurrencyEntity>();
 
-  const { data: currencies, isFetching: areCurrenciesLoading } =
-    useCurrencies();
+  // const { data: currencies, isFetching: areCurrenciesLoading } =
+  //   useCurrencies();
 
-  // const [currencies] = useState<CurrencyEntity[]>([
-  //   {
-  //     currency: 'USD',
-  //     supported_currency_id: 'USD',
-  //     is_active: true,
-  //     xaf_rate: 600.0,
-  //     last_updated: new Date().toDateString(),
-  //     created_at: new Date().toDateString(),
-  //     created_by: '',
-  //   },
-  //   {
-  //     currency: 'CAD',
-  //     supported_currency_id: 'CAD',
-  //     is_active: true,
-  //     xaf_rate: 450.0,
-  //     last_updated: new Date().toDateString(),
-  //     created_at: new Date().toDateString(),
-  //     created_by: '',
-  //   },
-  // ])
+  const [currencies] = useState<CurrencyEntity[]>([
+    {
+      currency: 'USD',
+      supported_currency_id: 'USD',
+      is_active: true,
+      xaf_rate: 600.0,
+      last_updated: new Date().toDateString(),
+      created_at: new Date().toDateString(),
+      created_by: '',
+    },
+    {
+      currency: 'CAD',
+      supported_currency_id: 'CAD',
+      is_active: true,
+      xaf_rate: 450.0,
+      last_updated: new Date().toDateString(),
+      created_at: new Date().toDateString(),
+      created_by: '',
+    },
+  ])
 
   const correspondingFlags: { [key: string]: string } = {
     USD: '/assets/usa-flag.jpg',
