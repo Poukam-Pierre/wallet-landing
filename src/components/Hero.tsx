@@ -12,7 +12,7 @@ import {
 } from '@mui/material';
 import { useTheme } from '@xafpay/theme';
 import { CurrencyEntity } from '@xafpay/types';
-import { useCurrencies } from 'api/hooks/useCurrency';
+// import { useCurrencies } from 'api/hooks/useCurrency';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
