@@ -72,8 +72,8 @@ export const website = {
   allTransactions: 'Toutes les transactions',
   searchName: 'Rechercher par nom',
   sendMoneyAt: "Envoyez de l'argent à des ",
-  unbeatable: 'taux imbattables',
-  rates: '',
+  unbeatable: 'imbattables',
+  rates: 'taux',
   clickToSwipe: 'Cliquez pour glisser',
   enterAmount: 'Entrez le montant',
   invalidAmount: 'Montant invalide',
@@ -229,7 +229,7 @@ export const website = {
   SOUTH_WEST: 'Sud-Ouest',
   waitAminute: 'Veuillez patienter...',
   completeNow: 'Complétez le KYC maintenant',
-  howItWorksTitle: 'Comment ça marche',
+  howItWorksTitle: 'Utilisation',
   remittanceOnYourHands: "Votre solution de transfert d'argent",
   ContactUsMessage:
     "Si vous souhaitez en savoir plus sur l'application Xafpay ou si vous avez d'autres questions, n'hésitez pas à nous contacter via le chat de l'application ou par email à contact@xafpay.com.",
@@ -249,29 +249,26 @@ export const website = {
   conformityAndCompliance:
     'Conformité réglementaire : Nos services sont conformes à toutes les réglementations internationales afin de garantir une transparence et une sécurité maximales.',
   whyTrust: 'Pourquoi nous choisir',
-  speedAndReliability: 'Rapidité & Fiabilité',
+  speedAndReliability: 'Rapidité & Sécurité',
   speedAndReliabilityDescription:
-    "Rapidité et fiabilité inégalées. Nous garantissons des transferts d'argent sécurisés en un clin d'œil.",
-  securityFirst: 'Sécurité maximale',
-  securityFirstDescription:
-    "Rapidité et fiabilité inégalées. Nous garantissons des transferts d'argent sécurisés en un clin d'œil.",
+    "Garantir la livraison en s'appuyant sur plusieurs niveaux de sécurité pour assurer la sécurité de vos transferts",
   competitivePrices: 'Taux avantageux',
   competitivePriceDescription:
-    "Rapidité et fiabilité inégalées. Nous garantissons des transferts d'argent sécurisés en un clin d'œil.",
+    'Obtenir des taux plus avantageux que les taux de change actuels du marché',
   heroMessageEngagement: 'Tous vos besoins financiers au même endroit',
   subtextMessageEngagement: 'Transferts et paiements faciles à tout moment',
   payoutMethods: 'Options de paiement',
   pushToAction: 'Commencez en quelques minutes',
-  faq: 'FAQ',
+  faq: 'FAQs',
   howItWorksStep1: 'Inscription facile',
   howItWorksStep1Description:
     'Commencez par créer un compte Xafpay en quelques minutes. Remplissez vos données de base et choisissez la méthode de paiement qui vous convient le mieux.',
-  howItWorksStep2: 'Montant & Bénéficiaire',
+  howItWorksStep2: 'Complete le KYC',
   howItWorksStep2Description:
-    'Saisissez le montant que vous souhaitez envoyer et nous vous indiquerons le taux de change en temps réel. Ajoutez les coordonnées du bénéficiaire au Cameroun, y compris son nom, son numéro de téléphone et sa destination.',
+    "Saisissez vos données personnelles, téléchargez une pièce d'identité et vérifiez votre compte.",
   howItWorksStep3: 'Paiement sécurisé',
   howItWorksStep3Description:
-    'Commencez par créer un compte Xafpay en quelques minutes. Remplissez vos données de base et choisissez la méthode de paiement qui vous convient le mieux.',
+    "Reliez votre compte bancaire, approvisionnez votre compte, saisissez les informations du destinataire et transférez de l'argent.",
   howItWorksStep4: 'Montant & Bénéficiaire',
   howItWorksStep4Description:
     'Saisissez le montant que vous souhaitez envoyer et nous vous indiquerons le taux de change en temps réel. Ajoutez les coordonnées du bénéficiaire au Cameroun, y compris son nom, son numéro de téléphone et sa destination.',
@@ -283,7 +280,7 @@ export const website = {
   qrCodeEngagement:
     'Accédez instantanément à tous vos services financiers en scannant le code QR ci-dessous.',
   adviceheroMessage: 'Économisez sur les transferts avec Xafpay',
-  heroMessage: "Envoyez de l'argent au Cameroun à des taux avantageux",
+  heroMessage: "Transférer de l'argent au Cameroun avec notre",
   descriptionheroMessage:
     'Optimisez la valeur de vos envois de fonds vers le Cameroun grâce à nos taux de change exceptionnels.',
   heroActionBtn: "Envoyer de l'argent",
@@ -292,6 +289,7 @@ export const website = {
   WillReceive: 'Ils reçoivent',
   OurTransactionFees: 'Nos frais',
   feesRate: '0%',
+  feesRates: 'Frais: 0% à vie',
   transferNow: 'Transférer maintenant',
   ourFonctionnalities: 'Fonctionnalités',
   transactrionsHistory: 'Historique des transactions',
@@ -305,4 +303,34 @@ export const website = {
   securePayment: 'Paiements sécurisés',
   recipientHistory: 'Liste des bénéficiaires',
   faSecurity: 'Protégé par 2FA',
+  termsOfService: "Conditions d'utilisation",
+  aboutUs: 'À propos',
+  todayRate: 'Taux du jour',
+  doYouHaveAnAccount: 'Avez-vous un compte ?',
+  zeroFee: 'Frais zéro',
+  zeroFeeDescription:
+    "Envoyez de l'argent à l'étranger sans frais de transaction",
+  instantTransfer: 'Transfert instantané',
+  instantTransferDescription:
+    "Envoyez et recevez de l'argent en quelques secondes",
+  address: 'Adresse',
+  security: 'Sécurité',
+  speed: 'Speed',
+  accessOurAppHere: 'Accéder à notre application ici',
+  legal: 'Légal',
+  getStarted: 'Commencer',
+  aboutUsDescription:
+    "Lancée en 2023, Xafpay LLC est une startup fintech qui redéfinit la manière dont l'argent traverse les frontières, en commençant par le corridor États-Unis-Cameroun. Dans une région où les transferts d'argent constituent une bouée de sauvetage vitale pour des millions de personnes, nous avons pour mission de rendre les transferts plus rapides, plus abordables et accessibles aux communautés mal desservies d'Afrique subsaharienne.",
+  ourMissionDescription:
+    "Chez XAFPAY, nous utilisons des technologies numériques avancées pour fournir des solutions de transfert d'argent sécurisées, économiques et conviviales, contribuant ainsi à combler les écarts financiers et à autonomiser les familles à travers le continent.",
+  ourMissionEngagement:
+    "L'Afrique est en pleine croissance, et ses besoins aussi. Nous sommes là pour y répondre—un transfert à la fois.",
+  joinUs: "Rejoignez-nous pour révolutionner les transferts d'argent",
+  joinUsDescription:
+    "Que vous envoyiez de l'argent pour soutenir votre famille, investir dans une entreprise ou payer des factures, XAFPAY LLC est votre partenaire de confiance. Nous sommes créés par des Africains, pour les Africains et tous ceux qui croient en un avenir financier plus juste et plus rapide.",
+  ourMission: 'Notre Mission',
+  feesannualStat:
+    "Flux annuels de transferts d'argent vers l'Afrique subsaharienne",
+  feesStat: 'Plus de 50 milliards de dollars',
+  transferPercentage: 'Frais moyens par transfert dans la région',
 };

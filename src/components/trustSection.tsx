@@ -1,24 +1,48 @@
 import { Box, Typography } from "@mui/material";
 import Image from "next/image";
 import { useIntl } from "react-intl";
-import SectionTitle from "./sectionTitle";
+import { SectionTitle } from "@components";
+import { IWhyTrust } from "@xafpay/types";
 
 
 export default function TrustSection() {
     const { formatMessage } = useIntl();
 
-    const whyTrustData = [
+    const whyTrustData: IWhyTrust[] = [
         {
             title: formatMessage({ id: 'speedAndReliability' }),
             description: formatMessage({ id: 'speedAndReliabilityDescription' }),
+            image: {
+                link: '/assets/immunity.svg',
+                label: formatMessage({ id: 'security' })
+            }
         },
         {
-            title: formatMessage({ id: 'securityFirst' }),
-            description: formatMessage({ id: 'securityFirstDescription' }),
+            title: formatMessage({ id: 'zeroFee' }),
+            description: formatMessage({ id: 'zeroFeeDescription' }),
+            image: {
+                link: '/assets/no-fee.svg',
+                label: formatMessage({ id: 'zeroFee' })
+            }
+
         },
         {
             title: formatMessage({ id: 'competitivePrices' }),
             description: formatMessage({ id: 'competitivePriceDescription' }),
+            image: {
+                link: '/assets/feedback-review.svg',
+                label: formatMessage({ id: 'unbeatable' })
+            }
+
+        },
+        {
+            title: formatMessage({ id: 'instantTransfer' }),
+            description: formatMessage({ id: 'instantTransferDescription' }),
+            image: {
+                link: '/assets/time-fast.svg',
+                label: formatMessage({ id: 'speed' })
+            }
+
         }
     ]
 
@@ -27,7 +51,7 @@ export default function TrustSection() {
             display: 'grid',
             textAlign: 'center',
             justifyContent: 'center',
-            marginBottom: '68px',
+            paddingBottom: '68px',
             rowGap: 8,
             bgcolor: 'rgba(250, 250, 253, 1)'
         }}>
@@ -36,12 +60,12 @@ export default function TrustSection() {
             </SectionTitle>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                columnGap: 15,
+                gridTemplateColumns: 'repeat(4, auto)',
+                columnGap: 1,
             }}>
-                {whyTrustData.map((item, index) => (
+                {whyTrustData.map(({ description, image, title }) => (
                     <Box
-                        key={index}
+                        key={title}
                         sx={{
                             border: '1px solid lightgray',
                             borderRadius: '10px',
@@ -51,12 +75,13 @@ export default function TrustSection() {
                             sx={{
                                 display: 'grid',
                                 rowGap: 3,
-                                margin: 2,
+                                margin: 1,
                             }}>
                             <Image
-                                src="/assets/speed.png"
-                                alt="speed" width={150}
-                                height={100}
+                                src={image.link}
+                                alt={image.label}
+                                width={120}
+                                height={70}
                                 style={{
                                     justifySelf: 'center',
                                     objectFit: 'contain',
@@ -69,7 +94,7 @@ export default function TrustSection() {
                                     fontFamily: 'Poppins'
                                 }}
                             >
-                                {item.title}
+                                {title}
                             </Typography>
                             <Typography
                                 variant="p1r"
@@ -80,7 +105,7 @@ export default function TrustSection() {
                                     lineHeight: '143%'
                                 }}
                             >
-                                {item.description}
+                                {description}
                             </Typography>
                         </Box>
                     </Box>

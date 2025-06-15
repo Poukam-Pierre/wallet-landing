@@ -247,30 +247,27 @@ export const website = {
   conformityAndCompliance:
     'Regulatory compliance: Our services comply with all international regulations to ensure maximum transparency and security.',
   whyTrust: 'Find out why they place their trust in us',
-  speedAndReliability: 'Fast and reliable service',
+  speedAndReliability: 'Reliable & secure',
   speedAndReliabilityDescription:
-    'Unrivalled speed and reliability. We guarantee secure money transfers in the blink of an eye.',
-  securityFirst: 'First-rate security',
-  securityFirstDescription:
-    'Unrivalled speed and reliability. We guarantee secure money transfers in the blink of an eye.',
-  competitivePrices: 'Competitive rates',
+    'Guarantee delivery backed by multiple layers of security to ensure your transfers stay safe.',
+  competitivePrices: 'Unbeatable rates',
   competitivePriceDescription:
-    'Unrivalled speed and reliability. We guarantee secure money transfers in the blink of an eye.',
+    'Get better rates than current market exchange rate',
   heroMessageEngagement: 'Everything you need for your financial transactions.',
   subtextMessageEngagement:
     'Manage your transfers and payments easily with our application. Fast, secure and available at all times, so your finances are always under control, wherever you are.',
   payoutMethods: 'Payout Methods',
   pushToAction: 'Getting started is easy',
-  faq: 'FAQ of Xafpay',
+  faq: 'FAQs of Xafpay',
   howItWorksStep1: 'Simple registration',
   howItWorksStep1Description:
     'Start by creating an Xafpay account in just a few minutes. Fill in your basic details and choose the payment method that suits you best.',
-  howItWorksStep2: 'Enter amount and your Beneficiary',
+  howItWorksStep2: 'Complete KYC',
   howItWorksStep2Description:
-    "Enter the amount you want to send, and we'll show you the exchange rate in real time.Add the details of the beneficiary in Cameroon, including name, phone number and destination.",
+    'Enter tour persona details, upload identity document and verify your account',
   howItWorksStep3: 'Pay securely',
   howItWorksStep3Description:
-    'Start by creating an Xafpay account in just a few minutes. Fill in your basic details and choose the payment method that suits you best.',
+    'Link your bank account, fund account, enter recipient information and transfer money',
   howItWorksStep4: 'Enter the amount and your Beneficiary',
   howItWorksStep4Description:
     "Enter the amount you want to send, and we'll show you the exchange rate in real time.Add the details of the beneficiary in Cameroon, including name, phone number and destination.",
@@ -281,7 +278,7 @@ export const website = {
   qrCodeEngagement:
     'Get instant access to all your financial services by scanning the QR code below.',
   adviceheroMessage: 'Save on your transfers with Xafpay.',
-  heroMessage: 'Transfer money to Cameroon with our unbeatable rates.',
+  heroMessage: 'Transfer money to Cameroon with our',
   descriptionheroMessage:
     'Maximise the value of your remittances to Cameroon with our exceptional exchange rates.',
   heroActionBtn: 'Send money',
@@ -290,6 +287,7 @@ export const website = {
   WillReceive: 'They will receive',
   OurTransactionFees: 'Our transaction fees',
   feesRate: '0%',
+  feesRates: 'Fees: 0% forever',
   transferNow: 'Transfert Now',
   ourFonctionnalities: 'Our fonctionnalities',
   transactrionsHistory: 'Transactions history',
@@ -304,4 +302,30 @@ export const website = {
   recipientHistory: 'Recipient history',
   faSecurity: 'Secured by 2FA',
   termsOfService: 'Terms of Service',
+  aboutUs: 'About Us',
+  todayRate: 'Today rate',
+  doYouHaveAnAccount: 'Do you have an account ?',
+  zeroFee: 'Zero fee',
+  zeroFeeDescription: 'Send money globally with no transaction fees',
+  instantTransfer: 'Instant Transfer',
+  instantTransferDescription: 'Send and receive money within seconds',
+  address: 'Address',
+  security: 'Secutity',
+  speed: 'Rapide',
+  accessOurAppHere: 'Access our app here',
+  legal: 'Legal',
+  getStarted: 'Get started',
+  aboutUsDescription:
+    "Launched in 2023, Xafpay LLC is a fintech startup redefining how money moves across borders starting with the USA to Cameroon corridor. In aregion where remittances are a vital lifeline for millions, we're on amission to make transfers faster, more affordable, and accessible to underserved communities across Sub-Saharan Africa.",
+  ourMissionDescription:
+    'At XAFPAY, we are harnessing advanced digital technology, to deliver secure, low-cost, and user-friendly remittance solutions helping bridge financial gaps and empower families across the continent.',
+  ourMissionEngagement:
+    "Africa is rising, and so are its needs. We're here to meet them—one transfer at a time.",
+  joinUs: 'Join Us in Revolutionizing Remittances',
+  joinUsDescription:
+    " Whether you're sending money to support family, invest in a business,or pay bills, XAFPAY LLC is your trusted partner. We're built by Africans, for Africans and everyone who believes in a fairer, faster financial future.",
+  ourMission: 'Our Mission',
+  feesannualStat: 'Flows into Sub-Saharan Africa in remittances annually',
+  feesStat: '$50 billion+',
+  transferPercentage: 'Average fees per transfer in the region',
 };

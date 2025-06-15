@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 import CheckCircleIcon from '@iconify/icons-fluent/checkmark-circle-20-regular';
-import SectionTitle from "./sectionTitle";
+import { SectionTitle } from "@components";
 import { Icon } from "@iconify/react";
 
 

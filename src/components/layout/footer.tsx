@@ -5,7 +5,6 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import { Box, Divider, IconButton, Typography } from '@mui/material';
-import dayjs from 'dayjs';
 import Image from 'next/image';
 import { QRCodeSVG } from 'qrcode.react';
 import { JSX } from 'react';
@@ -67,14 +66,6 @@ export default function Footer() {
 
   const resources: { title: string; link: string }[] = [
     {
-      title: formatMessage({ id: 'login' }),
-      link: `${process.env.NEXT_PUBLIC_APP_URL}/login`,
-    },
-    {
-      title: formatMessage({ id: 'register' }),
-      link: `${process.env.NEXT_PUBLIC_APP_URL}/register`,
-    },
-    {
       title: formatMessage({ id: 'privacyPolicy' }),
       link: `${process.env.NEXT_PUBLIC_APP_URL}/privacy-policy`,
     },
@@ -84,12 +75,6 @@ export default function Footer() {
     },
   ];
 
-  const products: { title: string; link: string }[] = [
-    {
-      title: 'XAFPAY',
-      link: `${process.env.NEXT_PUBLIC_APP_URL}`,
-    },
-  ];
 
   return (
     <Box
@@ -120,13 +105,21 @@ export default function Footer() {
         >
           {formatMessage({ id: 'remittanceOnYourHands' })}
         </Typography>
-        <QRCodeSVG value={`${process.env.NEXT_PUBLIC_APP_URL}`} />
+        <Box sx={{
+          display: 'grid',
+          justifyItems: 'center',
+          rowGap: 1
+        }}>
+          <QRCodeSVG value={`${process.env.NEXT_PUBLIC_APP_URL}`} />
+          <Typography variant='l2r'>
+            {formatMessage({ id: 'accessOurAppHere' })}
+          </Typography>
+        </Box>
       </Box>
       <Box
         sx={{
-          display: 'flex',
-          flexDirection: 'row',
-          justifyContent: 'space-between',
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr 1fr',
           marginTop: '32px',
           marginBottom: '32px',
         }}
@@ -145,29 +138,31 @@ export default function Footer() {
             height={80}
           />
           <Typography variant="caption" color="white" fontFamily="Poppins">
-            @xafpay -{dayjs('01-01-2023').format('YYYY')}
+            @xafpay -{2023}
           </Typography>
         </Box>
         <Box
           sx={{
             display: 'grid',
-            textAlign: 'left',
+            textAlign: 'center',
             alignContent: 'start',
           }}
         >
           <Typography variant="h3" marginBottom={1}>
-            {formatMessage({ id: 'products' })}
+            {formatMessage({ id: 'legal' })}
           </Typography>
-          {products.map(({ title, link }) => (
-            <Typography variant="l2r" component="a" href={link} key={link}>
-              {title}
-            </Typography>
-          ))}
+          <Box sx={{ display: 'grid', rowGap: 1 }}>
+            {resources.map(({ title, link }) => (
+              <Typography variant="l2r" component="a" href={link} key={link}>
+                {title}
+              </Typography>
+            ))}
+          </Box>
         </Box>
         <Box
           sx={{
             display: 'grid',
-            textAlign: 'left',
+            textAlign: 'right',
             alignContent: 'start',
           }}
         >
@@ -182,29 +177,13 @@ export default function Footer() {
             >
               {formatMessage({ id: 'email' })}: contact@xafpay.com
             </Typography>
-            <Typography variant="l2r" component="a" href="tel:+1234567890">
-              {formatMessage({ id: 'phone' })}: +1234567890
+            <Typography variant="l2r">
+              {formatMessage({ id: 'address' })}:
+              1001 S. Main ST, STE 600, Kalispell MT 59901, USA
             </Typography>
           </Box>
         </Box>
-        <Box
-          sx={{
-            display: 'grid',
-            textAlign: 'left',
-            alignContent: 'start',
-          }}
-        >
-          <Typography variant="h3" marginBottom={1}>
-            {formatMessage({ id: 'ressources' })}
-          </Typography>
-          <Box sx={{ display: 'grid', rowGap: 1 }}>
-            {resources.map(({ title, link }) => (
-              <Typography variant="l2r" component="a" href={link} key={link}>
-                {title}
-              </Typography>
-            ))}
-          </Box>
-        </Box>
+
       </Box>
       <Divider />
       <Box
@@ -213,34 +192,47 @@ export default function Footer() {
           rowGap: 4,
         }}
       >
-        <Box
-          sx={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(4, auto)',
-            width: 'fit-content',
-            columnGap: 2,
-          }}
-        >
-          {socialIcon.map(({ icon, link }, index) => (
-            <IconButton
-              size="large"
-              key={index}
-              href={link}
-              target="_blank"
-              sx={{
-                padding: 0,
-              }}
-            >
-              {icon}
-            </IconButton>
-          ))}
-        </Box>
+        <Typography variant="h5" sx={{ fontWeight: 500 }}>
+          XAFPAY LLC is a Fintech company incorporated in the USA under Montana SOS file
+          No.C1446980-16217942. Registered with FinCEN as a money service business
+          with registration number 31000273428168
+        </Typography>
         <Typography variant="h5" sx={{ fontWeight: 500 }}>
           {formatMessage({ id: 'ContactUsMessage' })}
         </Typography>
-        <Typography variant="p2r" sx={{ textAlign: 'center' }}>
-          Copyrigth@xafpay - {2023}
-        </Typography>
+        <Box sx={{
+          display: 'grid',
+          justifyItems: 'center',
+          alignItems: 'center',
+          rowGap: 1
+        }}>
+          <Typography variant="p2r">
+            © {2023} XAFPAY LLC. ALL RIGHTS RESERVED
+          </Typography>
+          <Box
+            sx={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(4, auto)',
+              width: 'fit-content',
+              columnGap: 2,
+            }}
+          >
+            {socialIcon.map(({ icon, link }, index) => (
+              <IconButton
+                size="large"
+                key={index}
+                href={link}
+                target="_blank"
+                sx={{
+                  padding: 0,
+                }}
+              >
+                {icon}
+              </IconButton>
+            ))}
+          </Box>
+
+        </Box>
       </Box>
     </Box>
   );

@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { IPaymentMethods } from "@xafpay/types";
 import Image from "next/image";
 import { useIntl } from "react-intl";
-import SectionTitle from "./sectionTitle";
+import { SectionTitle } from "@components"
 
 
 export default function PaymentMethods() {
@@ -29,12 +29,14 @@ export default function PaymentMethods() {
     ]
 
     return (
-        <Box sx={{
-            display: 'grid',
-            rowGap: 8,
-            marginBottom: 7,
-            width: '100%',
-        }}>
+        <Box
+            sx={{
+                display: 'grid',
+                rowGap: 8,
+                marginBottom: 7,
+                width: '100%',
+            }}
+        >
             <SectionTitle color="#0E103A">
                 {formatMessage({ id: 'payoutMethods' })}
             </SectionTitle>

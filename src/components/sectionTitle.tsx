@@ -5,7 +5,7 @@ interface SectionTitleProps {
     color: string;
     width?: string
 }
-export default function SectionTitle({
+export function SectionTitle({
     children,
     color,
     width = "60%"
