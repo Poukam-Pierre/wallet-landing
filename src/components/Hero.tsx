@@ -8,10 +8,11 @@ import {
   Chip,
   Divider,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material';
 import { useTheme } from '@xafpay/theme';
 import { CurrencyEntity } from '@xafpay/types';
+import { useCurrencies } from 'api/hooks/useCurrency';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
@@ -27,37 +28,38 @@ export default function Hero() {
   );
   const [activeCurrency, setActiveCurrency] = useState<CurrencyEntity>();
 
-  // const { data: currencies, isFetching: areCurrenciesLoading } =
-  //   useCurrencies();
+  const { data: currencies, isFetching: areCurrenciesLoading } =
+    useCurrencies();
 
-  const [currencies] = useState<CurrencyEntity[]>([
-    {
-      currency: 'USD',
-      supported_currency_id: 'USD',
-      is_active: true,
-      xaf_rate: 600.0,
-      last_updated: new Date().toDateString(),
-      created_at: new Date().toDateString(),
-      created_by: '',
-    },
-    {
-      currency: 'CAD',
-      supported_currency_id: 'CAD',
-      is_active: true,
-      xaf_rate: 450.0,
-      last_updated: new Date().toDateString(),
-      created_at: new Date().toDateString(),
-      created_by: '',
-    },
-  ])
+  // const [currencies] = useState<CurrencyEntity[]>([
+  //   {
+  //     currency: 'USD',
+  //     supported_currency_id: 'USD',
+  //     is_active: true,
+  //     xaf_rate: 600.0,
+  //     last_updated: new Date().toDateString(),
+  //     created_at: new Date().toDateString(),
+  //     created_by: '',
+  //   },
+  //   {
+  //     currency: 'CAD',
+  //     supported_currency_id: 'CAD',
+  //     is_active: true,
+  //     xaf_rate: 450.0,
+  //     last_updated: new Date().toDateString(),
+  //     created_at: new Date().toDateString(),
+  //     created_by: '',
+  //   },
+  // ])
 
   const correspondingFlags: { [key: string]: string } = {
     USD: '/assets/usa-flag.jpg',
     CAD: '/assets/canada-flag.png',
   };
+
   useEffect(() => {
-    setActiveCurrency(currencies[0]);
-  }, [])
+    setActiveCurrency(currencies?.[0]);
+  }, [currencies]);
 
   /* Handle amount by checking if number value has been typed 
      if so not, clear the value textfield
@@ -76,7 +78,7 @@ export default function Hero() {
         handleClose={() => setCurrencyAnchorEl(null)}
         open={!!currencyAnchorEl}
         supportedCurrencies={currencies}
-        isLoading={false}
+        isLoading={areCurrenciesLoading}
         selectItem={setActiveCurrency}
       />
       <Box
@@ -374,6 +376,33 @@ export default function Hero() {
                 >
                   {formatMessage({ id: 'WillReceive' })}
                 </Typography>
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      textAlign: 'start',
+                      fontSize: { tablet: '36px', mobile: '24px' },
+                      fontWeight: '700',
+                      fontFamily: 'Poppins',
+                    }}
+                  >
+                    {amount && activeCurrency
+                      ? formatNumber(
+                          Number((amount * activeCurrency.xaf_rate).toFixed(2))
+                        )
+                      : '...'}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      lineHeight: '160%',
+                      color: '#12192C',
+                      fontSize: { mobile: '18px', tablet: '24px' },
+                      fontWeight: '600',
+                      fontFamily: 'Space Grotesk',
+                    }}
+                  >
+                    XAF
+                  </Typography>
+                </Box>
                 <Box
                   sx={{
                     display: 'flex',
@@ -488,6 +517,28 @@ export default function Hero() {
                 {formatMessage({ id: 'transferNow' })}
               </Button>
             </Box>
+            <Divider />
+            <Button
+              size="large"
+              variant="contained"
+              color="primary"
+              endIcon={<Icon icon={arrowRight} />}
+              sx={{
+                fontSize: '1.2rem',
+                fontWeight: 'bold',
+                fontFamily: 'Poppins',
+                width: '100%',
+              }}
+              onClick={() =>
+                window.open(
+                  `${process.env.NEXT_PUBLIC_APP_URL}/amount=${amount}&currency=${activeCurrency?.currency}`,
+                  '_blank'
+                )
+              }
+              disabled={areCurrenciesLoading || !activeCurrency}
+            >
+              {formatMessage({ id: 'transferNow' })}
+            </Button>
           </Box>
         </Box>
       </Box>
