@@ -8,15 +8,16 @@ import {
   Chip,
   Divider,
   TextField,
-  Typography
+  Typography,
 } from '@mui/material';
 import { useTheme } from '@xafpay/theme';
 import { CurrencyEntity } from '@xafpay/types';
+import { useCurrencies } from 'api/hooks/useCurrency';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useIntl } from 'react-intl';
 import CurrencyMenu from './currencyMeny';
-import { useCurrencies } from 'api/hooks/useCurrency';
+// import { useCurrencies } from 'api/hooks/useCurrency';
 
 export function Hero() {
   const { formatMessage, formatNumber } = useIntl();
@@ -28,16 +29,40 @@ export function Hero() {
   );
   const [activeCurrency, setActiveCurrency] = useState<CurrencyEntity>();
 
-  const { data: currencies, isFetching: areCurrenciesLoading } =
-    useCurrencies();
+//   const { data: currencies, isFetching: areCurrenciesLoading } =
+//     useCurrencies();
 
+
+  const [currencies] = useState<CurrencyEntity[]>([
+    {
+      currency: 'USD',
+      supported_currency_id: 'USD',
+      is_active: true,
+      xaf_rate: 600.0,
+      last_updated: new Date().toDateString(),
+      created_at: new Date().toDateString(),
+      created_by: '',
+    },
+    {
+      currency: 'CAD',
+      supported_currency_id: 'CAD',
+      is_active: true,
+      xaf_rate: 450.0,
+      last_updated: new Date().toDateString(),
+      created_at: new Date().toDateString(),
+      created_by: '',
+    },
+
+  const areCurrenciesLoading = false;
+    
   const correspondingFlags: { [key: string]: string } = {
     USD: '/assets/usa-flag.jpg',
     CAD: '/assets/canada-flag.png',
   };
+
   useEffect(() => {
-    setActiveCurrency(currencies[0]);
-  }, [])
+    setActiveCurrency(currencies?.[0]);
+  }, [currencies]);
 
   /* Handle amount by checking if number value has been typed 
      if so not, clear the value textfield
