@@ -3,18 +3,20 @@ import Image from 'next/image';
 import { QRCodeSVG } from 'qrcode.react';
 import { useIntl } from 'react-intl';
 
-export default function ContactUsSection() {
+export function ContactUsSection() {
   const { formatMessage } = useIntl();
   return (
     <Box
       sx={{
         display: 'grid',
-        gridTemplateColumns: '1fr auto',
+        gridTemplateColumns: { mobile: 'none', tablet: '1fr auto' },
         justifyContent: 'center',
-        width: '75rem',
+        maxWidth: '70rem',
         justifySelf: 'center',
         columnGap: 5,
-        margin: '68px 0',
+        padding: { mobile: '0 16px', tablet: 0 },
+        textAlign: { mobile: 'center', tablet: 'inherit' },
+        marginTop: 7
       }}
     >
       <Box
@@ -23,28 +25,59 @@ export default function ContactUsSection() {
           rowGap: 4,
           height: 'fit-content',
           alignSelf: 'center',
+          pb: { mobile: 4, tablet: 0 }
         }}
       >
         <Typography
           variant="h1"
           sx={{
             fontFamily: 'Space Grotesk',
-            fontSize: '48px',
+            fontSize: { mobile: '36px', tablet: '48px' },
             lineHeight: '120%',
           }}
         >
           {formatMessage({ id: 'remittanceSolutionOnHand' })}
         </Typography>
-        <Typography variant="h3" fontSize="32px">
+        <Typography
+          variant="h3"
+          sx={{
+            fontSize: {
+              mobile: '24px',
+              tablet: '32px'
+            },
+          }}
+        >
           {formatMessage({ id: 'qrCodeEngagement' })}
         </Typography>
-        <QRCodeSVG
-          value={`${process.env.NEXT_PUBLIC_APP_URL}`}
-          style={{
-            width: '13rem',
-            height: '13rem',
-          }}
-        />
+        <Box sx={{
+          display: {
+            mobile: 'none',
+            tablet: 'block'
+          }
+        }}>
+          <QRCodeSVG
+            value={`${process.env.NEXT_PUBLIC_APP_URL}`}
+            style={{
+              width: '13rem',
+              height: '13rem',
+            }}
+          />
+        </Box>
+        <Box sx={{
+          display: {
+            mobile: 'block',
+            tablet: 'none'
+          },
+          justifySelf: 'center'
+        }}>
+          <QRCodeSVG
+            value={`${process.env.NEXT_PUBLIC_APP_URL}`}
+            style={{
+              width: '9rem',
+              height: '9rem',
+            }}
+          />
+        </Box>
       </Box>
       <Image
         src="/assets/phoneIllustration.png"

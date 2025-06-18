@@ -35,7 +35,7 @@ export default function TextCard({
                 }}
             />
             <Typography variant='h3'>
-                {title}
+                {title.toUpperCase()}
             </Typography>
             <Typography
                 variant='p1r'

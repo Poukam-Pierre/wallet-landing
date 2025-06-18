@@ -2,6 +2,7 @@ import { Typography } from "@mui/material";
 import { useTheme } from "@xafpay/theme";
 import { INavItem } from "@xafpay/types";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 
 interface INavItemProps {
@@ -14,7 +15,9 @@ export function NavItem({
     handleLink
 }: INavItemProps) {
     const theme = useTheme()
-    const isActiveItem = false; // This should be replaced with actual logic to determine if the item is active
+    const pathname = usePathname()
+
+    const isActiveItem = pathname === href
     return (
         <Typography
             variant="h5"

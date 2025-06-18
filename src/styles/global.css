@@ -18,9 +18,9 @@ body {
 .container--x {
   width: 100%;
   /* max-width: 1276px; */
-  max-width: 1366px;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  max-width: 1396px;
+  /* padding-left: 1rem;
+  padding-right: 1rem; */
   margin: 0 auto;
 }
 

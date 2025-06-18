@@ -1,20 +1,22 @@
-import { Box, Chip, Typography } from "@mui/material";
-import { useTheme } from "@xafpay/theme";
+import { SectionTitle } from "@components";
+import { Box } from "@mui/material";
 import Image from "next/image";
 import { useIntl } from "react-intl";
-import SectionTitle from "../sectionTitle";
 import TextCard from "./textCard";
 
-export default function HowItWorks() {
+export function HowItWorks() {
     const { formatMessage } = useIntl();
-    const theme = useTheme();
     return (
         <Box
             id="howItWorks"
             sx={{
                 display: 'grid',
                 justifyContent: 'center',
-                bgcolor: 'rgba(250, 250, 253, 1)'
+                bgcolor: 'rgba(250, 250, 253, 1)',
+                padding: {
+                    mobile: '0 16px 0',
+                    tablet: 0
+                },
             }}
         >
             <SectionTitle color='#0E103A'>
@@ -22,16 +24,39 @@ export default function HowItWorks() {
             </SectionTitle>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    mobile: '1fr',
+                    tablet: 'repeat(2, 1fr)'
+                },
+                gridTemplateRows: 'auto auto',
+                '& > :first-child': {
+                    mobile: {
+                        order: 2
+                    },
+                    tablet: {
+                        order: 1
+                    }
+                },
+                '& > :last-child': {
+                    mobile: {
+                        order: 1
+                    },
+                    tablet: {
+                        order: 2
+                    }
+                },
                 columnGap: 25,
                 alignItems: 'center',
-                paddingTop: 5,
+                paddingTop: {
+                    mobile: 7,
+                    tablet: 5
+                },
             }}>
                 <Image
-                    src='/assets/exchangeRate.png'
+                    src='/assets/step_1_xaf.png'
                     alt='first registration step'
                     width={400}
-                    height={350}
+                    height={500}
                     style={{
                         objectFit: 'contain',
                     }}
@@ -45,108 +70,67 @@ export default function HowItWorks() {
             </Box>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    mobile: '1fr',
+                    tablet: 'repeat(2, 1fr)'
+                },
+                gridTemplateRows: 'auto auto',
                 columnGap: 25,
-                alignItems: 'center'
+                alignItems: 'center',
+                paddingTop: {
+                    mobile: 5,
+                    tablet: 0
+                }
             }}>
                 <TextCard
                     title={formatMessage({ id: 'howItWorksStep2' })}
                     description={formatMessage({ id: 'howItWorksStep2Description' })}
                     step={2}
-                    positionY={77}
+                    positionY={30}
                 />
                 <Image
-                    src='/assets/preTransactionOverview.png'
+                    src='/assets/step_2_xaf.png'
                     alt='second registration step'
                     width={350}
                     height={600}
                     style={{
                         objectFit: 'contain',
-                        objectPosition: 'top'
+                        objectPosition: 'center',
                     }}
                 />
 
             </Box>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    mobile: '1fr',
+                    tablet: 'repeat(2, 1fr)'
+                },
+                gridTemplateRows: 'auto auto',
+                '& > :first-child': {
+                    mobile: {
+                        order: 2
+                    },
+                    tablet: {
+                        order: 1
+                    }
+                },
+                '& > :last-child': {
+                    mobile: {
+                        order: 1
+                    },
+                    tablet: {
+                        order: 2
+                    }
+                },
                 columnGap: 25,
                 alignItems: 'center'
             }}>
                 <Image
-                    src='/assets/accountBalance.png'
+                    src='/assets/step_3_xaf.png'
                     alt='first registration step'
-                    width={350}
-                    height={280}
-                    style={{
-                        objectFit: 'contain',
-                        objectPosition: 'top',
-                        justifySelf: 'end'
-                    }}
-                />
-                <Box sx={{
-                    display: 'grid',
-                    rowGap: 2,
-                    height: 'fit-content',
-                    transform: 'translate(9px, -40px)'
-                }}>
-                    <Chip
-                        label='3'
-                        sx={{
-                            backgroundColor: theme.palette.primary.main,
-                            color: 'white',
-                            fontSize: '1.5rem',
-                            fontWeight: 'bold',
-                            width: '2.5rem',
-                            height: '2.5rem',
-                            borderRadius: '30%',
-                        }}
-                    />
-                    <Typography variant='h3'>
-                        {formatMessage({ id: 'howItWorksStep3' })}
-                    </Typography>
-                    <Typography
-                        variant='p1r'
-                        maxWidth='25rem'
-                    >
-                        {formatMessage({ id: 'howItWorksStep3Description' })}
-                    </Typography>
-                </Box>
-            </Box>
-            <Box sx={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                columnGap: 25,
-                alignItems: 'center'
-            }}>
-                <TextCard
-                    title={formatMessage({ id: 'howItWorksStep4' })}
-                    description={formatMessage({ id: 'howItWorksStep4Description' })}
-                    step={4}
-                    positionY={77}
-                />
-                <Image
-                    src='/assets/preTransactionOverview.png'
-                    alt='second registration step'
-                    width={350}
-                    height={600}
-                    style={{
-                        objectFit: 'contain',
-                        objectPosition: 'top'
-                    }}
-                />
-            </Box>
-            <Box sx={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
-                columnGap: 25,
-                alignItems: 'center'
-            }}>
-                <Image
-                    src='/assets/accountBalance.png'
-                    alt='first registration step'
-                    width={350}
-                    height={280}
+                    width={400}
+                    height={500}
                     style={{
                         objectFit: 'contain',
                         objectPosition: 'top',
@@ -154,9 +138,9 @@ export default function HowItWorks() {
                     }}
                 />
                 <TextCard
-                    title={formatMessage({ id: 'howItWorksStep5' })}
-                    description={formatMessage({ id: 'howItWorksStep5Description' })}
-                    step={5}
+                    title={formatMessage({ id: 'howItWorksStep3' })}
+                    description={formatMessage({ id: 'howItWorksStep3Description' })}
+                    step={3}
                     positionY={40}
                 />
             </Box>

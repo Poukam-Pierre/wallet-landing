@@ -4,7 +4,7 @@ import "../styles/reset.css";
 
 
 export const metadata = {
-  title: 'Xafpay Portal',
+  title: 'Xafpay',
   description: 'Take a look how xafpay aims to revolutionize the payment industry and register.',
 };
 

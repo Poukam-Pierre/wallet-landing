@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { useIntl } from "react-intl";
 
-export default function Engagement() {
+export function Engagement() {
     const { formatMessage } = useIntl();
     return (
         <Box sx={{
@@ -13,7 +13,8 @@ export default function Engagement() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             height: '430px',
-            color: 'white'
+            color: 'white',
+            p: 2
         }}>
             <Box sx={{
                 display: 'grid',
@@ -34,7 +35,7 @@ export default function Engagement() {
                     variant="h3"
                     sx={{
                         fontFamily: 'Space Grotesk',
-                        fontSize: { tablet: '24px', mobile: '18px' },
+                        fontSize: { tablet: '24px', mobile: '16px' },
                     }}
                 >
                     {formatMessage({ id: 'subtextMessageEngagement' })}

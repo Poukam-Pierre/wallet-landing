@@ -4,7 +4,7 @@ import { IFonctionnalities } from "@xafpay/types";
 import { useState } from "react";
 import { useIntl } from "react-intl";
 import Explanation from "./explanation";
-import SectionTitle from "../sectionTitle";
+import { SectionTitle } from "@components";
 
 export default function Functionnalities() {
     const { formatMessage } = useIntl();

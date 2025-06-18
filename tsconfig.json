@@ -3,7 +3,7 @@
     "target": "ES2017",
     "baseUrl": "src/",
     "paths": {
-      "@components": ["components/*"],
+      "@components": ["components/index.ts"],
       "@xafpay/types": ["libs/types/index.ts"],
       "@xafpay/theme": ["libs/theme/index.ts"],
       "@xafpay/shared": ["libs/shared/index.ts"]
