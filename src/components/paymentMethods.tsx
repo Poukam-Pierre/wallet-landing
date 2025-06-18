@@ -32,7 +32,7 @@ export function PaymentMethods() {
         <Box
             sx={{
                 display: 'grid',
-                rowGap: 8,
+                rowGap: 5,
                 marginBottom: 7,
                 width: '100%',
             }}
@@ -41,11 +41,14 @@ export function PaymentMethods() {
                 {formatMessage({ id: 'payoutMethods' })}
             </SectionTitle>
             <Box sx={{
-                display: 'grid',
+                display: { mobile: 'flex', tablet: 'grid' },
+                flexWrap: 'wrap',
                 gridAutoFlow: 'column',
                 columnGap: 7,
+                rowGap: 7,
                 width: 'fit-content',
                 justifySelf: 'center',
+                justifyContent: 'center',
             }}>
                 {paymentMethods.map(({ link, alt }, index) => (
                     <Image

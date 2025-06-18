@@ -1,4 +1,4 @@
-import { TextField, MenuItem } from "@mui/material";
+import { MenuItem, TextField, Typography } from "@mui/material";
 import { useLanguage } from "@xafpay/theme";
 import { SupportedLanguageEnum } from "@xafpay/types";
 import { useIntl } from "react-intl";
@@ -44,15 +44,16 @@ export function LanguageSwapper() {
                     key={key}
                     value={key}
                 >
-                    <img
-                        loading="lazy"
-                        width="20"
-                        src={`https://flagcdn.com/w20/${key === 'En' ? 'us' : key.toLowerCase()}.png`}
-                        srcSet={`https://flagcdn.com/w40/${key === 'En' ? 'us' : key.toLowerCase()}.png 2x`}
-                        alt=""
-                        style={{ marginRight: '10px' }}
-                    />
-                    {formatMessage({ id: value.toLowerCase() })}
+                    <Typography sx={{
+                        display: { mobile: 'block', tablet: 'none' },
+                    }}>
+                        {formatMessage({ id: key })}
+                    </Typography>
+                    <Typography sx={{
+                        display: { mobile: 'none', desktop: 'block' },
+                    }}>
+                        {formatMessage({ id: value.toLowerCase() })}
+                    </Typography>
                 </MenuItem>
             ))}
         </TextField>

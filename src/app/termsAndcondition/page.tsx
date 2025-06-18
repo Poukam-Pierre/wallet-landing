@@ -24,7 +24,7 @@ export default function TermsAndCondition() {
             maxWidth="laptop"
             sx={{
                 display: 'grid',
-                padding: '0 0 48px 0',
+                padding: { desktop: '0 0 48px 0', mobile: '0 16px 48px 16px' },
                 justifySelf: 'center',
             }}
         >

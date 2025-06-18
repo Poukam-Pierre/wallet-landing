@@ -13,7 +13,10 @@ export function HowItWorks() {
                 display: 'grid',
                 justifyContent: 'center',
                 bgcolor: 'rgba(250, 250, 253, 1)',
-                paddingBottom: 10
+                padding: {
+                    mobile: '0 16px 0',
+                    tablet: 0
+                },
             }}
         >
             <SectionTitle color='#0E103A'>
@@ -21,10 +24,33 @@ export function HowItWorks() {
             </SectionTitle>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    mobile: '1fr',
+                    tablet: 'repeat(2, 1fr)'
+                },
+                gridTemplateRows: 'auto auto',
+                '& > :first-child': {
+                    mobile: {
+                        order: 2
+                    },
+                    tablet: {
+                        order: 1
+                    }
+                },
+                '& > :last-child': {
+                    mobile: {
+                        order: 1
+                    },
+                    tablet: {
+                        order: 2
+                    }
+                },
                 columnGap: 25,
                 alignItems: 'center',
-                paddingTop: 5,
+                paddingTop: {
+                    mobile: 7,
+                    tablet: 5
+                },
             }}>
                 <Image
                     src='/assets/step_1_xaf.png'
@@ -44,9 +70,17 @@ export function HowItWorks() {
             </Box>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    mobile: '1fr',
+                    tablet: 'repeat(2, 1fr)'
+                },
+                gridTemplateRows: 'auto auto',
                 columnGap: 25,
-                alignItems: 'center'
+                alignItems: 'center',
+                paddingTop: {
+                    mobile: 5,
+                    tablet: 0
+                }
             }}>
                 <TextCard
                     title={formatMessage({ id: 'howItWorksStep2' })}
@@ -61,14 +95,34 @@ export function HowItWorks() {
                     height={600}
                     style={{
                         objectFit: 'contain',
-                        objectPosition: 'center'
+                        objectPosition: 'center',
                     }}
                 />
 
             </Box>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    mobile: '1fr',
+                    tablet: 'repeat(2, 1fr)'
+                },
+                gridTemplateRows: 'auto auto',
+                '& > :first-child': {
+                    mobile: {
+                        order: 2
+                    },
+                    tablet: {
+                        order: 1
+                    }
+                },
+                '& > :last-child': {
+                    mobile: {
+                        order: 1
+                    },
+                    tablet: {
+                        order: 2
+                    }
+                },
                 columnGap: 25,
                 alignItems: 'center'
             }}>

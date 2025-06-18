@@ -34,14 +34,13 @@ export function Cta() {
           display: 'grid',
           rowGap: 4,
           color: 'white',
-          width: '60rem',
         }}
       >
         <Typography
           variant="h1"
           sx={{
             fontFamily: 'Space Grotesk',
-            fontSize: { tablet: '48px', mobile: '36px' },
+            fontSize: { tablet: '48px', mobile: '30px' },
             lineHeight: '120%',
             zIndex: 1,
           }}
@@ -54,7 +53,7 @@ export function Cta() {
             justifySelf: 'center',
             backgroundColor: 'white',
             fontFamily: 'Poppins',
-            width: '18rem',
+            width: { mobile: '12rem', tablet: '18rem' },
             color: theme.palette.primary.main,
           }}
           onClick={() => window.open(`${process.env.NEXT_PUBLIC_APP_URL}/register`, '_blank')}

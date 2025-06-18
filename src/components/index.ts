@@ -6,6 +6,7 @@ export * from './engagement';
 export * from './howItWorks/howItWorks';
 export * from './fonctionnality/functionnalities';
 export * from './layout/pageLayout';
+export * from './layout/sideBar';
 export * from './locationSection';
 export * from './contactUsSection';
 export * from './paymentMethods';

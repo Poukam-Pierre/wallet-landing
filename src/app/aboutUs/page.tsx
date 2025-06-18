@@ -16,7 +16,7 @@ export default function AboutUs() {
       sx={{
         display: 'grid',
         justifySelf: 'center',
-        padding: '0 0 48px 0',
+        padding: { desktop: '0 0 48px 0', mobile: '0 16px 48px 16px' },
       }}
     >
       <SectionTitle color="#0E103A">

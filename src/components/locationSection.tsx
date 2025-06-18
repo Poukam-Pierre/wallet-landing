@@ -11,12 +11,18 @@ export function LocationSection() {
     return (
         <Box sx={{
             display: 'grid',
-            padding: '0 118px',
+            padding: {
+                mobile: '0 16px 64px',
+                tablet: '0 118px 64px'
+            },
             paddingBottom: '48px',
             background: 'linear-gradient(to right, rgba(15, 93, 190, 1), rgba(7, 43, 88, 1))',
             color: 'white',
             textAlign: 'center',
-            rowGap: 7
+            rowGap: {
+                mobile: 4,
+                laptop: 7
+            }
         }}>
             <Box sx={{
                 display: 'grid',
@@ -25,7 +31,12 @@ export function LocationSection() {
                 <SectionTitle color="white" width="90%">
                     {formatMessage({ id: 'HeroRemittanceMessage' })}
                 </SectionTitle>
-                <Typography variant="h3" >
+                <Typography
+                    variant="h3"
+                    sx={{
+                        fontSize: { tablet: '24px', mobile: '20px' },
+                    }}
+                >
                     {formatMessage({ id: 'reliableRemittanceService' })}
                 </Typography>
             </Box>
@@ -38,6 +49,11 @@ export function LocationSection() {
                     display: 'grid',
                     gridAutoFlow: 'column',
                     alignItems: 'center',
+                    width: {
+                        mobile: '70%',
+                        tablet: '100%'
+                    },
+                    justifySelf: 'center'
                 }}>
                     <Box sx={{
                         display: 'grid',
@@ -74,6 +90,8 @@ export function LocationSection() {
                                 component='img'
                                 src='/assets/usa.png'
                                 alt="cad flag"
+                                sx={{
+                                }}
                             />
                             <Box
                                 component='img'
@@ -88,16 +106,26 @@ export function LocationSection() {
                         src='/assets/africa.png'
                         alt='africa map'
                         sx={{
-                            width: '400px',
-                            height: '400px',
+                            width: {
+                                tablet: '400px',
+                                mobile: '150px'
+                            },
+                            height: {
+                                tablet: '400px',
+                                mobile: '150px'
+                            },
                         }}
                     />
                 </Box>
             </Box>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(2, 1fr)',
+                gridTemplateColumns: {
+                    tablet: 'repeat(2, 1fr)',
+                    mobile: 'repeat(1, 1fr)'
+                },
                 columnGap: 25,
+                rowGap: 3
             }}>
                 <Box sx={{
                     display: 'grid',

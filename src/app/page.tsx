@@ -1,15 +1,17 @@
 'use client';
 
-import { PageLayout } from '@components';
-import { Cta } from '@components';
-import { Engagement } from '@components';
-import { FAQ } from '@components';
-import { Hero } from '@components';
-import { HowItWorks } from '@components';
-import { LocationSection } from '@components';
-import { PaymentMethods } from '@components';
-import { TrustSection } from '@components';
-import { ContactUsSection } from '@components';
+import {
+  ContactUsSection,
+  Cta,
+  Engagement,
+  FAQ,
+  Hero,
+  HowItWorks,
+  LocationSection,
+  PageLayout,
+  PaymentMethods,
+  TrustSection
+} from '@components';
 
 
 export default function Index() {

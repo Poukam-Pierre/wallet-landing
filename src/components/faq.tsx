@@ -82,7 +82,7 @@ export function FAQ() {
                                     key={index}
                                     style={{
                                         listStyle: 'disc',
-                                        marginLeft: '1.5rem',
+                                        marginLeft: '1rem',
                                         marginTop: '1rem'
                                     }}
                                 >

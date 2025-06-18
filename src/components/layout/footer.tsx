@@ -80,25 +80,25 @@ export default function Footer() {
     <Box
       sx={{
         display: 'grid',
-        padding: '62px 118px',
+        padding: { mobile: '32px 16px', desktop: '62px 118px' },
         background:
           'linear-gradient(to right, rgba(15, 93, 190, 1), rgba(7, 43, 88, 1))',
         color: 'white',
-        rowGap: '28px',
+        rowGap: { mobile: '15px', desktop: '28px' },
       }}
     >
       <Box
         sx={{
           display: 'flex',
           justifyContent: 'space-between',
-          alignItems: 'center',
+          alignItems: { desktop: 'center', mobile: 'baseline' },
         }}
       >
         <Typography
           variant="h1"
           sx={{
             fonstFamily: 'Space Grotesk',
-            fontSize: '48px',
+            fontSize: { desktop: '48px', mobile: '32px' },
             lineHeight: '120%',
             fontWeight: 700,
           }}
@@ -106,7 +106,7 @@ export default function Footer() {
           {formatMessage({ id: 'remittanceOnYourHands' })}
         </Typography>
         <Box sx={{
-          display: 'grid',
+          display: { mobile: 'none', desktop: 'grid' },
           justifyItems: 'center',
           rowGap: 1
         }}>
@@ -119,9 +119,10 @@ export default function Footer() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: '1fr 1fr',
-          marginTop: '32px',
-          marginBottom: '32px',
+          gridTemplateColumns: { desktop: '1fr 1fr', mobile: 'none' },
+          marginTop: { mobile: 0, desktop: '32px' },
+          marginBottom: { mobile: 0, desktop: '32px' },
+          rowGap: { mobile: '15px', desktop: '0px' },
         }}
       >
         <Image
@@ -133,8 +134,8 @@ export default function Footer() {
         <Box
           sx={{
             display: 'grid',
-            textAlign: 'right',
-            alignContent: 'start',
+            textAlign: { mobile: 'left', desktop: 'right' },
+            height: { mobile: 'fit-content', desktop: '100%' }
           }}
         >
           <Typography variant="h3" marginBottom={1}>
@@ -160,7 +161,7 @@ export default function Footer() {
       <Box
         sx={{
           display: 'grid',
-          rowGap: 4,
+          rowGap: { mobile: '15px', desktop: 4 },
         }}
       >
         <Typography variant="h5" sx={{ fontWeight: 500 }}>
@@ -175,12 +176,13 @@ export default function Footer() {
           rowGap: 2
         }}>
           <Box sx={{
-            display: 'grid',
-            gridAutoFlow: 'column',
+            display: { desktop: 'grid', mobile: 'ruby' },
+            gridAutoFlow: { desktop: 'column', mobile: 'row' },
             columnGap: 2,
             justifyItems: 'space-between',
           }}>
-            <Typography variant="p2r">
+            <Typography
+              variant="p2r">
               © {2023} XAFPAY LLC. ALL RIGHTS RESERVED
             </Typography>
             <Box sx={{
@@ -209,7 +211,7 @@ export default function Footer() {
               gridTemplateColumns: 'repeat(4, auto)',
               width: 'fit-content',
               columnGap: 2,
-              justifySelf: 'end',
+              justifySelf: { mobile: 'start', desktop: 'end' },
             }}
           >
             {socialIcon.map(({ icon, link }, index) => (

@@ -50,17 +50,22 @@ export function TrustSection() {
             display: 'grid',
             textAlign: 'center',
             justifyContent: 'center',
-            paddingBottom: '68px',
-            rowGap: 8,
-            bgcolor: 'rgba(250, 250, 253, 1)'
+            rowGap: 7,
+            bgcolor: 'rgba(250, 250, 253, 1)',
+            padding: { mobile: '0 24px 60px', tablet: '0 0 60px' }
         }}>
             <SectionTitle color='#0E103A'>
                 {formatMessage({ id: 'whyTrust' })}
             </SectionTitle>
             <Box sx={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(4, auto)',
+                gridTemplateColumns: {
+                    mobile: 'none',
+                    tablet: 'repeat(2, auto)',
+                    desktop: 'repeat(4, auto)'
+                },
                 columnGap: 1,
+                rowGap: 1
             }}>
                 {whyTrustData.map(({ description, image, title }) => (
                     <Box
