@@ -52,7 +52,7 @@ export function Hero() {
       created_at: new Date().toDateString(),
       created_by: '',
     },
-
+])
   const areCurrenciesLoading = false;
     
   const correspondingFlags: { [key: string]: string } = {
